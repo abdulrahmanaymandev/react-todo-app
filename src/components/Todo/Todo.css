@@ -1,0 +1,120 @@
+.todo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: transparent;
+  border-bottom: 1px solid #f3f4f6;
+  margin-bottom: 2px;
+  transition: background 0.12s;
+}
+
+.todo:last-child {
+  border-bottom: none;
+}
+
+.todo:hover {
+  background: #f9fafb;
+}
+
+/* Custom checkbox */
+.todo-checkbox {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid #d1d5db;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-checkbox:hover {
+  border-color: #6b7280;
+}
+
+.todo-checkbox.checked {
+  background: #111827;
+  border-color: #111827;
+}
+
+.todo-checkbox.checked::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 9px;
+  border: 1.5px solid white;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+/* Task text */
+.task {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 450;
+  color: #1f2937;
+  line-height: 1.45;
+  cursor: pointer;
+  word-break: break-word;
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.task.completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+/* Action buttons — only show on hover */
+.todo-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.todo:hover .todo-actions {
+  opacity: 1;
+}
+
+.btn-edit,
+.btn-delete {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  background: transparent;
+  transition: background 0.12s;
+}
+
+.btn-edit {
+  color: #6b7280;
+}
+
+.btn-edit:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.btn-delete {
+  color: #9ca3af;
+}
+
+.btn-delete:hover {
+  background: #fef2f2;
+  color: #ef4444;
+}
